@@ -30,4 +30,15 @@ public class UserDAO {
     }
     return users;
   }
+
+  // add a user
+  public void addUser(User user) throws Exception {
+    String sql = "INSERT INTO users (name, email) VALUES (?, ?)";
+    try (Connection conn = Database.getConnection();
+         PreparedStatement stmt = conn.prepareStatement(sql)) {
+      stmt.setString(1, user.getName());
+      stmt.setString(2, user.getEmail());
+      stmt.executeUpdate();
+    }
+  }
 }
