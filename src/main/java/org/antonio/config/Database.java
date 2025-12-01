@@ -1,4 +1,4 @@
-package org.antonio.database;
+package org.antonio.config;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
